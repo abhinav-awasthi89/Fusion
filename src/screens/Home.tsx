@@ -4,19 +4,15 @@ import { useNavigation } from '@react-navigation/native';
 import profilePic from '../assets/testProfiles/i.png';
 
 const Home = () => {
-  function alert(arg0: string): void {
-    throw new Error('Function not implemented.');
-  }
-
   const navigation = useNavigation(); // Get the navigation object
   const numberOfPosts = 3; // Define the number of posts you want to display
 
-  // Function to generate a random hex color
-  const getRandomColor = () => {
-    const letters = '0123456789ABCDEF';
+  // Function to generate a random light hex color
+  const getRandomLightColor = () => {
+    const letters = 'CDEF'; // Restrict to letters for lighter shades
     let color = '#';
     for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
+      color += letters[Math.floor(Math.random() * 4)]; // Choose from C, D, E, F
     }
     return color;
   };
@@ -25,13 +21,13 @@ const Home = () => {
   const postElements = [];
   for (let i = 0; i < numberOfPosts; i++) {
     postElements.push(
-      <View key={i} style={[styles.postsContainer, { backgroundColor: getRandomColor() }]}>
+      <View key={i} style={[styles.postsContainer, { backgroundColor: getRandomLightColor() }]}>
         <View style={styles.postHeader}>
           <Image 
             source={profilePic}
             style={styles.profilePic}
           />
-          <Button title="Get in Touch!" onPress={() => alert('Followed!')} />
+          <Button title="Get in touch" onPress={() => alert('Followed!')} />
         </View>
         <View style={styles.post}>
           <Text style={styles.description}>This is a description of the post {i + 1}.</Text>
@@ -71,6 +67,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: '#fff',
+    color: 'black'
   },
   welcomeText: {
     fontSize: 40,
