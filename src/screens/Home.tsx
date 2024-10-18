@@ -5,7 +5,7 @@ import profilePic from '../assets/testProfiles/i.png';
 
 const Home = () => {
   const navigation = useNavigation(); // Get the navigation object
-  const numberOfPosts = 3; // Define the number of posts you want to display
+  const numberOfPosts = 5; // Define the number of posts you want to display
 
   // Function to generate a random light hex color
   const getRandomLightColor = () => {
@@ -27,7 +27,7 @@ const Home = () => {
             source={profilePic}
             style={styles.profilePic}
           />
-          <Button title="Get in touch" onPress={() => alert('Followed!')} />
+          <Button title="Get in touch" onPress={() => navigation.navigate('Inbox')} />
         </View>
         <View style={styles.post}>
           <Text style={styles.description}>This is a description of the post {i + 1}.</Text>
@@ -42,18 +42,6 @@ const Home = () => {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.profileContainer}>
-        <Pressable onPress={() => navigation.navigate('Profile')}>
-          <Image 
-            source={profilePic}
-            style={styles.profilePic}
-          />
-        </Pressable>
-        <Text style={styles.welcomeText}>
-          Welcome!!
-        </Text>
-      </View>
-
       {/* Render the array of posts */}
       {postElements}
     </ScrollView>

@@ -3,11 +3,6 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 
-// Screens
-import Home from '../screens/Home';
-import Notification from '../screens/Notification';
-import Profile from '../screens/Profile';
-
 const Navbar = () => {
     const navigation = useNavigation(); // Hook to access navigation in functional components
   
@@ -21,7 +16,7 @@ const Navbar = () => {
           <Icon name='search' size={30} color='#000000' />
         </Pressable>
   
-        <Pressable onPress={() => navigation.navigate('Chats')}>
+        <Pressable onPress={() => navigation.navigate('Inbox')}>
           <Icon name='comments' size={30} color='#000000' />
         </Pressable>
       </View>

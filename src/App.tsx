@@ -2,15 +2,17 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
+
 import profilePic from 'D:\\React Native\\Fusion\\src\\assets\\testProfiles\\i.png';
 
 // Screens
 import Home from './screens/Home';
 import Notification from './screens/Notification';
 import Profile from './screens/Profile';
-import Chats from './screens/Chats';
 import Search from './screens/Search';
 import Navbar from './components/Navbar';
+import Inbox from './screens/Inbox';
+import Chats from './screens/Chats';
 
 // Profile picture path
 // const profilePic = require('../assets/testProfiles/i.png');
@@ -19,8 +21,9 @@ export type RootStackParamList = {
   Home: undefined;
   Notification: undefined;
   Profile: undefined;
-  Chats: undefined;
+  Inbox: undefined;
   Search: undefined;
+  Chats: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -60,10 +63,10 @@ const App = () => {
               }}
             />
             <Stack.Screen
-              name="Chats"
-              component={Chats}
+              name="Inbox"
+              component={Inbox}
               options={{
-                title: 'Chats - Conversations',
+                title: 'Inbox - Conversations',
               }}
             />
             <Stack.Screen
@@ -78,6 +81,13 @@ const App = () => {
               component={Profile}
               options={{
                 title: 'Profile - Your Info',
+              }}
+            />
+            <Stack.Screen
+              name="Chats"
+              component={Chats}
+              options={{
+                title: 'ChatBox',
               }}
             />
           </Stack.Navigator>
