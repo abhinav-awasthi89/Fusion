@@ -8,9 +8,9 @@ const Profile = () => {
     <ScrollView>
       <View>
       <Image 
-            source={profilePic}
-            style={styles.profilePic}
-          />
+        source={profilePic}
+        style={styles.profilePic}
+      />
 
         <View>
 
