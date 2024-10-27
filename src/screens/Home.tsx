@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     padding: 8,
     borderRadius: 25,
+    color: 'black'
   },
   post: {
     padding: 10,
@@ -88,6 +89,7 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 16,
+    color: 'black'
   },
   postImage: {
     width: '100%',
