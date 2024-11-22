@@ -27,7 +27,7 @@ const Inbox = () => {
                         <Image source={profilePic} style={styles.profilePic} />
                     </View>
                     <View style={styles.chatText}>
-                        <Text>
+                        <Text style={styles.Name}>
                             Chat {i + 1}
                         </Text>
                     </View>
@@ -47,8 +47,8 @@ export default Inbox;
 
 const styles = StyleSheet.create({
     profilePic: {
-        width: 30,
-        height: 30,
+        width: 50,
+        height: 50,
         borderRadius: 15,
         marginRight: 10,
     },
@@ -67,6 +67,10 @@ const styles = StyleSheet.create({
     },
     bigBoxes: {
         margin: 8,
-        borderRadius: 25
+        borderRadius: 25,
+        color: 'black'
+    },
+    Name : {
+        color: 'black',
     }
 });

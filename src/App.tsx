@@ -103,6 +103,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#F4F4F4',
+    color: 'black'
   },
   centerScreen: {
     width: '100%',
@@ -121,6 +123,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: 'black'
   },
 });
 
